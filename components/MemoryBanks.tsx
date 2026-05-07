@@ -3,32 +3,44 @@
 import { motion } from 'framer-motion';
 
 const skills = [
-  { label: 'React', icon: '⚛️', color: 'cyan' },
-  { label: 'TypeScript', icon: '📘', color: 'blue' },
-  { label: 'Node.js', icon: '🟩', color: 'green' },
-  { label: 'Next.js', icon: '▲', color: 'slate' },
-  { label: 'PostgreSQL', icon: '🐘', color: 'cyan' },
-  { label: 'Tailwind CSS', icon: '🎨', color: 'magenta' },
+  { label: 'LangChain', category: 'AI/ML' },
+  { label: 'Gemini API', category: 'AI/ML' },
+  { label: 'RAG Systems', category: 'AI/ML' },
+  { label: 'Vector DB (FAISS, Pinecone)', category: 'AI/ML' },
+  { label: 'TensorFlow', category: 'AI/ML' },
+  { label: 'Python', category: 'Programming' },
+  { label: 'JavaScript', category: 'Programming' },
+  { label: 'TypeScript', category: 'Programming' },
+  { label: 'SQL', category: 'Programming' },
+  { label: 'FastAPI', category: 'Backend' },
+  { label: 'Firebase', category: 'Backend' },
+  { label: 'Supabase', category: 'Backend' },
+  { label: 'MongoDB', category: 'Backend' },
+  { label: 'AWS', category: 'Cloud' },
+  { label: 'Docker', category: 'Cloud' },
+  { label: 'React', category: 'Frontend' },
+  { label: 'Vite', category: 'Frontend' },
+  { label: 'Tailwind CSS', category: 'Frontend' },
+  { label: 'Streamlit', category: 'Frontend' },
+  { label: 'SHAP', category: 'Tools' },
+  { label: 'OpenCV', category: 'Tools' },
+  { label: 'YOLOv8', category: 'Tools' },
+  { label: 'Git', category: 'Tools' },
+  { label: 'Vercel', category: 'Tools' },
 ];
 
 const experience = [
   {
-    role: 'Senior Developer',
-    company: 'Tech Corp',
-    period: '2022 - Present',
-    description: 'Building scalable full-stack applications',
+    role: 'AI & Backend Developer Intern',
+    company: 'IBM CSRBOX',
+    period: 'July 2025 - Aug 2025',
+    description: 'Led team of 8 developers building AI-powered textbook generation platform with RAG architecture using LangChain, Gemini API, and FAISS.',
   },
   {
-    role: 'Full-Stack Engineer',
-    company: 'Digital Studios',
-    period: '2020 - 2022',
-    description: 'Architected microservices and real-time systems',
-  },
-  {
-    role: 'Frontend Developer',
-    company: 'Web Innovations',
-    period: '2018 - 2020',
-    description: 'Created high-performance React applications',
+    role: 'Data Analyst Intern',
+    company: 'Profive Engineering',
+    period: 'June 2025',
+    description: 'Analyzed engineering datasets using Python and Pandas to derive operational insights and support material performance evaluation.',
   },
 ];
 
@@ -106,7 +118,7 @@ export function MemoryBanks() {
             <h3 className="text-2xl font-bold text-magenta-400 mb-8">SKILLS</h3>
 
             <motion.div
-              className="grid grid-cols-2 gap-4"
+              className="grid grid-cols-2 lg:grid-cols-3 gap-3"
               variants={containerVariants}
             >
               {skills.map((skill, i) => (
@@ -118,10 +130,10 @@ export function MemoryBanks() {
                   animate="animate"
                   whileHover="hover"
                   variants={hoverVariants}
-                  className="p-6 border border-cyan-500/30 rounded-lg backdrop-blur-sm cursor-pointer transition-all"
+                  className="p-4 border border-cyan-500/30 rounded-lg backdrop-blur-sm cursor-pointer transition-all"
                 >
-                  <div className="text-3xl mb-2">{skill.icon}</div>
-                  <p className="text-cyan-300 font-mono text-sm font-semibold">{skill.label}</p>
+                  <p className="text-cyan-300 font-mono text-xs font-semibold">{skill.label}</p>
+                  <p className="text-slate-500 text-xs mt-1">{skill.category}</p>
                 </motion.div>
               ))}
             </motion.div>

@@ -95,26 +95,65 @@ export function NeuralCore() {
           variants={textVariants}
           initial="initial"
           animate="animate"
-          className="absolute right-0 top-1/2 transform -translate-y-1/2 max-w-md pr-20"
+          className="absolute right-0 top-1/2 transform -translate-y-1/2 max-w-2xl pr-20"
         >
           <motion.h1
             variants={glitchVariants}
             animate="animate"
-            className="text-5xl md:text-6xl font-bold mb-6 text-cyan-300"
+            className="text-5xl md:text-6xl font-bold mb-2 text-cyan-300"
           >
-            SENTIENT
+            PRATIK
             <br />
-            OS
+            JADHAV
           </motion.h1>
+
+          <p className="text-cyan-400 font-mono text-sm mb-6">AI Engineer | Full-Stack Developer</p>
 
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.8 }}
-            className="text-lg text-slate-300 mb-8 font-light"
+            className="text-sm text-slate-300 mb-8 font-light leading-relaxed"
           >
-            Advanced digital consciousness. Crafting intelligent systems through full-stack development.
+            AI engineer specializing in Generative AI, Retrieval-Augmented Generation (RAG), and scalable backend systems. Expert in LLM-powered products, cloud infrastructure, and deploying production-ready AI solutions that solve real-world problems.
           </motion.p>
+
+          {/* Contact info */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.8, duration: 0.8 }}
+            className="space-y-2 mb-8 text-sm font-mono text-slate-400"
+          >
+            <p>📧 posj2004@gmail.com</p>
+            <p>📱 +91 8097081504</p>
+            <p>📍 Navi Mumbai, Maharashtra</p>
+          </motion.div>
+
+          {/* Social links */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1, duration: 0.8 }}
+            className="flex gap-4 mb-8"
+          >
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 border border-cyan-400/50 text-cyan-300 font-mono text-xs rounded hover:bg-cyan-400/10 transition-colors"
+            >
+              LinkedIn
+            </a>
+            <a
+              href="https://github.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 border border-magenta-400/50 text-magenta-300 font-mono text-xs rounded hover:bg-magenta-400/10 transition-colors"
+            >
+              GitHub
+            </a>
+          </motion.div>
 
           {/* Call to action button */}
           <motion.a

@@ -5,28 +5,32 @@ import { useRef } from 'react';
 
 const projects = [
   {
-    title: 'Neural Network Dashboard',
-    description: 'Real-time analytics platform with live data streaming',
-    tech: ['React', 'WebSocket', 'PostgreSQL', 'Chart.js'],
-    color: 'from-cyan-500 to-blue-500',
-  },
-  {
-    title: 'Quantum State Manager',
-    description: 'Advanced state management system for distributed systems',
-    tech: ['TypeScript', 'Node.js', 'Redis', 'gRPC'],
-    color: 'from-magenta-500 to-purple-500',
-  },
-  {
-    title: 'Consciousness Protocol API',
-    description: 'RESTful API with machine learning integration',
-    tech: ['Next.js', 'Python', 'TensorFlow', 'PostgreSQL'],
-    color: 'from-cyan-500 to-magenta-500',
-  },
-  {
-    title: 'Memory Archive System',
-    description: 'Distributed file storage with real-time sync',
-    tech: ['React', 'Node.js', 'AWS S3', 'MongoDB'],
+    title: 'UniAgric',
+    description: 'AI-powered agriculture platform with crop prediction and RAG-based knowledge retrieval. Implements ML crop recommendation engine using soil NPK, pH, and climate data with explainable AI (SHAP) for transparent farmer recommendations.',
+    tech: ['Python', 'LangChain', 'SHAP', 'TensorFlow', 'Scikit-learn'],
     color: 'from-green-500 to-cyan-500',
+    link: '',
+  },
+  {
+    title: 'EventEase',
+    description: 'AI-powered event vendor marketplace platform. Developed full-stack application with automated inquiry workflows and intelligent vendor discovery system connecting users with event vendors.',
+    tech: ['TypeScript', 'Supabase', 'React', 'Tailwind CSS'],
+    color: 'from-cyan-500 to-blue-500',
+    link: 'eventease-final-y8pw.vercel.app',
+  },
+  {
+    title: 'ARCHON-7',
+    description: 'Generative AI system for producing structured educational content dynamically. Implemented RAG pipeline for contextual knowledge retrieval and adaptive learning modules.',
+    tech: ['LangChain', 'Gemini API', 'FAISS', 'Python', 'FastAPI'],
+    color: 'from-magenta-500 to-purple-500',
+    link: '',
+  },
+  {
+    title: 'DonateNow',
+    description: 'Social platform connecting NGOs, donors, and e-waste vendors. Features role-based dashboards, E-waste tracking, and cloud deployment infrastructure.',
+    tech: ['React', 'Supabase', 'Firebase', 'Tailwind CSS'],
+    color: 'from-orange-500 to-cyan-500',
+    link: 'donate-now-5g47.vercel.app',
   },
 ];
 
