@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import { Globe } from './Globe';
 
 export function BootSequence() {
   const [displayText, setDisplayText] = useState('');
@@ -32,6 +33,9 @@ export function BootSequence() {
     >
       {/* Background grid effect */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(34,211,238,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(34,211,238,0.03)_1px,transparent_1px)] bg-[size:50px_50px] opacity-20" />
+      
+      {/* Rotating Earth Globe */}
+      <Globe />
 
       <div className="relative z-10 max-w-2xl mx-auto px-6">
         {/* Terminal-style container */}

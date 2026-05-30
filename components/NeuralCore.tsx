@@ -42,78 +42,32 @@ export function NeuralCore() {
       {/* Grid background */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(34,211,238,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(34,211,238,0.05)_1px,transparent_1px)] bg-[size:100px_100px]" />
 
-      <div className="relative z-10 w-full h-full flex items-center justify-center">
-        {/* Rotating rings - centered */}
-        <div className="relative w-96 h-96 flex items-center justify-center">
-          {/* Ring 1 - Cyan */}
-          <motion.div
-            className="absolute w-80 h-80 rounded-full border border-cyan-500/40"
-            custom={0}
-            variants={ringVariants}
-            animate="animate"
-          >
-            <div className="absolute top-0 left-1/2 w-2 h-2 bg-cyan-400 rounded-full transform -translate-x-1/2" />
-          </motion.div>
-
-          {/* Ring 2 - Magenta */}
-          <motion.div
-            className="absolute w-64 h-64 rounded-full border border-magenta-500/30"
-            custom={1}
-            variants={ringVariants}
-            animate="animate"
-            style={{ borderColor: 'rgba(236, 72, 153, 0.3)' }}
-          >
-            <div
-              className="absolute top-0 left-1/2 w-2 h-2 rounded-full transform -translate-x-1/2"
-              style={{ backgroundColor: 'rgb(236, 72, 153)' }}
-            />
-          </motion.div>
-
-          {/* Ring 3 - Cyan inner */}
-          <motion.div
-            className="absolute w-48 h-48 rounded-full border border-cyan-400/50"
-            custom={2}
-            variants={ringVariants}
-            animate="animate"
-          >
-            <div className="absolute top-0 left-1/2 w-1.5 h-1.5 bg-cyan-300 rounded-full transform -translate-x-1/2" />
-          </motion.div>
-
-          {/* Center core */}
-          <motion.div
-            className="relative w-12 h-12 flex items-center justify-center"
-            animate={{ scale: [1, 1.1, 1] }}
-            transition={{ duration: 2, repeat: Infinity }}
-          >
-            <div className="absolute inset-0 bg-gradient-to-br from-cyan-400 to-magenta-500 rounded-full blur-lg opacity-60" />
-            <div className="relative w-8 h-8 bg-gradient-to-br from-cyan-400 to-cyan-300 rounded-full shadow-lg shadow-cyan-400/50" />
-          </motion.div>
-        </div>
-
-        {/* Text content - positioned absolutely on the right */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 py-20 flex flex-col lg:flex-row items-center justify-between gap-12">
+        
+        {/* Text content - left side */}
         <motion.div
           variants={textVariants}
           initial="initial"
           animate="animate"
-          className="absolute right-0 top-1/2 transform -translate-y-1/2 max-w-2xl pr-20"
+          className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left z-20"
         >
           <motion.h1
             variants={glitchVariants}
             animate="animate"
-            className="text-5xl md:text-6xl font-bold mb-2 text-cyan-300"
+            className="text-5xl md:text-6xl lg:text-7xl font-bold mb-4 text-cyan-300 tracking-tight"
           >
             PRATIK
             <br />
             JADHAV
           </motion.h1>
 
-          <p className="text-cyan-400 font-mono text-sm mb-6">AI Engineer | Full-Stack Developer</p>
+          <p className="text-cyan-400 font-mono text-sm md:text-base mb-6">AI Engineer | Full-Stack Developer</p>
 
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.8 }}
-            className="text-sm text-slate-300 mb-8 font-light leading-relaxed"
+            className="text-sm md:text-base text-slate-300 mb-8 font-light leading-relaxed max-w-lg"
           >
             AI engineer specializing in Generative AI, Retrieval-Augmented Generation (RAG), and scalable backend systems. Expert in LLM-powered products, cloud infrastructure, and deploying production-ready AI solutions that solve real-world problems.
           </motion.p>
@@ -135,21 +89,21 @@ export function NeuralCore() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1, duration: 0.8 }}
-            className="flex gap-4 mb-8"
+            className="flex gap-4 mb-10"
           >
             <a
-              href="https://linkedin.com"
+              href="https://linkedin.com/in/pratikjadhav"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2 border border-cyan-400/50 text-cyan-300 font-mono text-xs rounded hover:bg-cyan-400/10 transition-colors"
+              className="px-6 py-2 border border-cyan-400/50 text-cyan-300 font-mono text-sm rounded hover:bg-cyan-400/10 transition-colors"
             >
               LinkedIn
             </a>
             <a
-              href="https://github.com"
+              href="https://github.com/posj2004"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2 border border-magenta-400/50 text-magenta-300 font-mono text-xs rounded hover:bg-magenta-400/10 transition-colors"
+              className="px-6 py-2 border border-magenta-400/50 text-magenta-300 font-mono text-sm rounded hover:bg-magenta-400/10 transition-colors"
             >
               GitHub
             </a>
@@ -165,6 +119,56 @@ export function NeuralCore() {
             EXPLORE SYSTEMS →
           </motion.a>
         </motion.div>
+
+        {/* Rotating rings - right side */}
+        <div className="relative w-full lg:w-1/2 flex items-center justify-center min-h-[400px]">
+          <div className="relative w-80 h-80 md:w-96 md:h-96 flex items-center justify-center">
+            {/* Ring 1 - Cyan */}
+            <motion.div
+              className="absolute w-full h-full rounded-full border border-cyan-500/40"
+              custom={0}
+              variants={ringVariants}
+              animate="animate"
+            >
+              <div className="absolute top-0 left-1/2 w-2 h-2 bg-cyan-400 rounded-full transform -translate-x-1/2" />
+            </motion.div>
+
+            {/* Ring 2 - Magenta */}
+            <motion.div
+              className="absolute w-4/5 h-4/5 rounded-full border border-magenta-500/30"
+              custom={1}
+              variants={ringVariants}
+              animate="animate"
+              style={{ borderColor: 'rgba(236, 72, 153, 0.3)' }}
+            >
+              <div
+                className="absolute top-0 left-1/2 w-2 h-2 rounded-full transform -translate-x-1/2"
+                style={{ backgroundColor: 'rgb(236, 72, 153)' }}
+              />
+            </motion.div>
+
+            {/* Ring 3 - Cyan inner */}
+            <motion.div
+              className="absolute w-3/5 h-3/5 rounded-full border border-cyan-400/50"
+              custom={2}
+              variants={ringVariants}
+              animate="animate"
+            >
+              <div className="absolute top-0 left-1/2 w-1.5 h-1.5 bg-cyan-300 rounded-full transform -translate-x-1/2" />
+            </motion.div>
+
+            {/* Center core */}
+            <motion.div
+              className="relative w-12 h-12 flex items-center justify-center"
+              animate={{ scale: [1, 1.1, 1] }}
+              transition={{ duration: 2, repeat: Infinity }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-400 to-magenta-500 rounded-full blur-lg opacity-60" />
+              <div className="relative w-8 h-8 bg-gradient-to-br from-cyan-400 to-cyan-300 rounded-full shadow-lg shadow-cyan-400/50" />
+            </motion.div>
+          </div>
+        </div>
+
       </div>
     </section>
   );

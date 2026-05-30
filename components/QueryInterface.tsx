@@ -29,28 +29,49 @@ export function QueryInterface() {
     },
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (inputRef.current?.value.trim()) {
       const userInput = inputRef.current.value;
       setMessages([...messages, `> ${userInput}`]);
+      inputRef.current.value = '';
 
-      // Simulate responses
+      // Processing message
       setTimeout(() => {
-        const responses = [
-          '[✓] Message received and processed',
-          '[✓] Routing to primary contact handler',
-          '[✓] Email queued for dispatch',
-        ];
-
-        responses.forEach((response, i) => {
-          setTimeout(() => {
-            setMessages((prev) => [...prev, response]);
-          }, (i + 1) * 300);
-        });
+        setMessages((prev) => [...prev, '[✓] Message received, initiating transmission...']);
       }, 300);
 
-      inputRef.current.value = '';
+      try {
+        // We use Web3Forms which is free and sends directly to your email without a backend
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
+          body: JSON.stringify({
+            // Get your free access key from https://web3forms.com/
+            access_key: 'aa883d8d-570b-4d1c-b0bf-a0fe31c56891', 
+            name: 'Sentient OS Terminal',
+            email: 'posj2004@gmail.com',
+            message: userInput,
+          }),
+        });
+
+        if (response.ok) {
+          setTimeout(() => {
+            setMessages((prev) => [...prev, '[✓] Transmission successful. Message sent to device.']);
+          }, 1000);
+        } else {
+          setTimeout(() => {
+            setMessages((prev) => [...prev, '[X] Transmission failed. Check access key.']);
+          }, 1000);
+        }
+      } catch (error) {
+        setTimeout(() => {
+          setMessages((prev) => [...prev, '[X] Network error during transmission.']);
+        }, 1000);
+      }
     }
   };
 
@@ -103,6 +124,8 @@ export function QueryInterface() {
                 className={`${
                   message.startsWith('>')
                     ? 'text-cyan-300 glow-cyan'
+                    : message.startsWith('[X]')
+                    ? 'text-red-400/90'
                     : 'text-cyan-400/70'
                 }`}
               >
@@ -146,18 +169,21 @@ export function QueryInterface() {
           className="mt-12 grid grid-cols-3 gap-4 text-center"
         >
           {[
-            { label: 'Email', value: 'hello@sentient-os.dev' },
-            { label: 'GitHub', value: '@sentient-dev' },
-            { label: 'LinkedIn', value: 'sentient-os' },
+            { label: 'Email', value: 'posj2004@gmail.com', href: 'mailto:posj2004@gmail.com' },
+            { label: 'GitHub', value: '@posj2004', href: 'https://github.com/posj2004' },
+            { label: 'LinkedIn', value: 'Pratik Jadhav', href: 'https://linkedin.com/in/pratikjadhav' },
           ].map((contact, i) => (
-            <motion.div
+            <motion.a
               key={contact.label}
+              href={contact.href}
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
-              className="p-4 border border-cyan-400/30 rounded hover:bg-cyan-400/5 transition-colors"
+              className="block p-4 border border-cyan-400/30 rounded hover:bg-cyan-400/5 transition-colors"
             >
               <p className="text-cyan-400 font-mono text-xs mb-1">{contact.label}</p>
-              <p className="text-slate-300 text-sm font-semibold">{contact.value}</p>
-            </motion.div>
+              <p className="text-slate-300 text-sm font-semibold truncate">{contact.value}</p>
+            </motion.a>
           ))}
         </motion.div>
       </div>
