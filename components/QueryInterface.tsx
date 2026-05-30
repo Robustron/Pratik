@@ -170,8 +170,8 @@ export function QueryInterface() {
         >
           {[
             { label: 'Email', value: 'posj2004@gmail.com', href: 'mailto:posj2004@gmail.com' },
-            { label: 'GitHub', value: '@posj2004', href: 'https://github.com/posj2004' },
-            { label: 'LinkedIn', value: 'Pratik Jadhav', href: 'https://linkedin.com/in/pratikjadhav' },
+            { label: 'GitHub', value: '@Robustron', href: 'https://github.com/Robustron' },
+            { label: 'LinkedIn', value: 'Pratik Jadhav', href: 'https://www.linkedin.com/in/pratik-jadhav-394500212' },
           ].map((contact, i) => (
             <motion.a
               key={contact.label}

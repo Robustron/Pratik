@@ -1,9 +1,9 @@
 import type { Metadata, Viewport } from 'next'
-import { Space_Grotesk, JetBrains_Mono } from 'next/font/google'
+import { Kanit, JetBrains_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], weight: ["400", "600", "700"] });
+const kanit = Kanit({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700", "800", "900"] });
 const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], weight: ["400", "600"] });
 
 export const metadata: Metadata = {
@@ -37,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="bg-slate-950 scroll-smooth">
       <body className="font-sans antialiased bg-slate-950 text-slate-100 overflow-x-hidden" style={{
-        fontFamily: `${spaceGrotesk.style.fontFamily}, ${jetbrainsMono.style.fontFamily}`,
+        fontFamily: `${kanit.style.fontFamily}, ${jetbrainsMono.style.fontFamily}`,
       }}>
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}

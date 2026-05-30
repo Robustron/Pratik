@@ -48,13 +48,13 @@ export default function Home() {
             <div>
               <h3 className="text-magenta-300 font-bold mb-4">SOCIAL</h3>
               <div className="flex gap-4">
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 text-sm">LinkedIn</a>
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-magenta-400 hover:text-magenta-300 text-sm">GitHub</a>
+                <a href="https://www.linkedin.com/in/pratik-jadhav-394500212" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 text-sm">LinkedIn</a>
+                <a href="https://github.com/Robustron" target="_blank" rel="noopener noreferrer" className="text-magenta-400 hover:text-magenta-300 text-sm">GitHub</a>
               </div>
             </div>
           </div>
           <div className="text-center text-slate-500 font-mono text-xs border-t border-slate-700 pt-8">
-            <p>&copy; 2025 Pratik Jadhav. All rights reserved.</p>
+            <p>&copy; 2026 Pratik Jadhav. All rights reserved.</p>
           </div>
         </div>
       </footer>

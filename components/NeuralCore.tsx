@@ -92,7 +92,7 @@ export function NeuralCore() {
             className="flex gap-4 mb-10"
           >
             <a
-              href="https://linkedin.com/in/pratikjadhav"
+              href="https://www.linkedin.com/in/pratik-jadhav-394500212"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-2 border border-cyan-400/50 text-cyan-300 font-mono text-sm rounded hover:bg-cyan-400/10 transition-colors"
@@ -100,7 +100,7 @@ export function NeuralCore() {
               LinkedIn
             </a>
             <a
-              href="https://github.com/posj2004"
+              href="https://github.com/Robustron"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-2 border border-magenta-400/50 text-magenta-300 font-mono text-sm rounded hover:bg-magenta-400/10 transition-colors"
