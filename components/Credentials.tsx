@@ -49,24 +49,24 @@ const hoverVariants = {
 
 export function Credentials() {
   return (
-    <section className="py-20 px-6 relative overflow-hidden">
+    <section className="min-h-screen py-20 px-6 w-full max-w-6xl mx-auto flex flex-col justify-center relative overflow-hidden">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950" />
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 -z-10" />
 
       {/* Animated background elements */}
-      <div className="absolute top-0 right-1/3 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-magenta-500/5 rounded-full blur-3xl" />
+      <div className="absolute top-0 right-1/3 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl -z-10" />
+      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-magenta-500/5 rounded-full blur-3xl -z-10" />
 
-      <div className="relative z-10 max-w-6xl mx-auto">
+      <div className="relative z-10 w-full">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-cyan-300 mb-4">CREDENTIALS</h2>
-          <p className="text-slate-400 font-mono text-sm">Certifications, achievements, and recognition</p>
+          <h2 className="text-4xl md:text-5xl font-bold text-cyan-300 mb-2">CREDENTIALS</h2>
+          <p className="text-slate-400 font-mono text-xs">Certifications, achievements, and recognition</p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12">

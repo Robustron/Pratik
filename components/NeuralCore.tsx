@@ -35,7 +35,7 @@ export function NeuralCore() {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden w-full">
       {/* Animated background elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950" />
 
@@ -79,9 +79,9 @@ export function NeuralCore() {
             transition={{ delay: 0.8, duration: 0.8 }}
             className="space-y-2 mb-8 text-sm font-mono text-slate-400"
           >
-            <p>📧 posj2004@gmail.com</p>
-            <p>📱 +91 8097081504</p>
-            <p>📍 Navi Mumbai, Maharashtra</p>
+            <p>posj2004@gmail.com</p>
+            <p>+91 8097081504</p>
+            <p>Navi Mumbai, Maharashtra</p>
           </motion.div>
 
           {/* Social links */}

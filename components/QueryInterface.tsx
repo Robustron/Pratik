@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import { useState, useRef } from 'react';
 
 export function QueryInterface() {
-  const [displayText, setDisplayText] = useState('');
   const [messages, setMessages] = useState<string[]>([
     '> INITIALIZING CONTACT PROTOCOL...',
     '[✓] Awaiting user input',
@@ -52,7 +51,7 @@ export function QueryInterface() {
           body: JSON.stringify({
             // Get your free access key from https://web3forms.com/
             access_key: 'aa883d8d-570b-4d1c-b0bf-a0fe31c56891', 
-            name: 'Sentient OS Terminal',
+            name: 'Robustron Portfolio Terminal',
             email: 'posj2004@gmail.com',
             message: userInput,
           }),
@@ -76,23 +75,23 @@ export function QueryInterface() {
   };
 
   return (
-    <section className="py-20 px-6 relative overflow-hidden">
+    <section className="min-h-screen py-20 px-6 w-full max-w-6xl mx-auto flex flex-col justify-between relative overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950" />
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 -z-10" />
 
-      <div className="absolute top-1/4 right-0 w-96 h-96 bg-magenta-500/5 rounded-full blur-3xl" />
+      <div className="absolute top-1/4 right-0 w-96 h-96 bg-magenta-500/5 rounded-full blur-3xl -z-10" />
 
-      <div className="relative z-10 max-w-2xl mx-auto">
+      <div className="relative z-10 max-w-2xl mx-auto w-full flex-1 flex flex-col justify-center my-12">
         {/* Section title */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-6"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-cyan-300 mb-4">QUERY INTERFACE</h2>
-          <p className="text-slate-400 font-mono text-sm">Establish communication protocol</p>
+          <h2 className="text-4xl md:text-5xl font-bold text-cyan-300 mb-2">QUERY INTERFACE</h2>
+          <p className="text-slate-400 font-mono text-xs">Establish communication protocol</p>
         </motion.div>
 
         {/* Terminal container */}
@@ -104,7 +103,7 @@ export function QueryInterface() {
           className="border border-cyan-500/50 rounded-lg overflow-hidden bg-slate-900/50 backdrop-blur-sm shadow-2xl shadow-cyan-500/20"
         >
           {/* Terminal header */}
-          <div className="flex items-center gap-2 px-6 py-4 bg-slate-800/50 border-b border-cyan-500/30">
+          <div className="flex items-center gap-2 px-6 py-3 bg-slate-800/50 border-b border-cyan-500/30">
             <div className="w-3 h-3 bg-red-500 rounded-full" />
             <div className="w-3 h-3 bg-yellow-500 rounded-full" />
             <div className="w-3 h-3 bg-green-500 rounded-full" />
@@ -112,7 +111,7 @@ export function QueryInterface() {
           </div>
 
           {/* Terminal content */}
-          <div className="h-96 overflow-y-auto p-6 space-y-2 font-mono text-sm">
+          <div className="h-60 overflow-y-auto p-6 space-y-2 font-mono text-sm">
             {/* Messages */}
             {messages.map((message, i) => (
               <motion.p
@@ -146,7 +145,7 @@ export function QueryInterface() {
           {/* Terminal footer - Input form */}
           <form
             onSubmit={handleSubmit}
-            className="border-t border-cyan-500/30 bg-slate-800/50 p-6"
+            className="border-t border-cyan-500/30 bg-slate-800/50 p-4"
           >
             <div className="flex items-center gap-2">
               <span className="text-cyan-300 font-mono">&gt;</span>
@@ -159,34 +158,12 @@ export function QueryInterface() {
             </div>
           </form>
         </motion.div>
-
-        {/* Contact methods */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4, duration: 0.6 }}
-          className="mt-12 grid grid-cols-3 gap-4 text-center"
-        >
-          {[
-            { label: 'Email', value: 'posj2004@gmail.com', href: 'mailto:posj2004@gmail.com' },
-            { label: 'GitHub', value: '@Robustron', href: 'https://github.com/Robustron' },
-            { label: 'LinkedIn', value: 'Pratik Jadhav', href: 'https://www.linkedin.com/in/pratik-jadhav-394500212' },
-          ].map((contact, i) => (
-            <motion.a
-              key={contact.label}
-              href={contact.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.05 }}
-              className="block p-4 border border-cyan-400/30 rounded hover:bg-cyan-400/5 transition-colors"
-            >
-              <p className="text-cyan-400 font-mono text-xs mb-1">{contact.label}</p>
-              <p className="text-slate-300 text-sm font-semibold truncate">{contact.value}</p>
-            </motion.a>
-          ))}
-        </motion.div>
       </div>
+
+      {/* Embedded Footer */}
+      <footer className="w-full border-t border-slate-800/40 pt-8 pb-4 z-10 text-center text-slate-500 font-mono text-xs">
+        <p>&copy; 2026 Pratik Jadhav. All rights reserved.</p>
+      </footer>
     </section>
   );
 }

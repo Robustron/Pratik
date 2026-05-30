@@ -7,25 +7,15 @@ const skills = [
   { label: 'Gemini API', category: 'AI/ML' },
   { label: 'RAG Systems', category: 'AI/ML' },
   { label: 'Vector DB (FAISS, Pinecone)', category: 'AI/ML' },
+  { label: 'YOLOv8', category: 'AI/ML' },
   { label: 'TensorFlow', category: 'AI/ML' },
-  { label: 'Python', category: 'Programming' },
-  { label: 'JavaScript', category: 'Programming' },
-  { label: 'TypeScript', category: 'Programming' },
-  { label: 'SQL', category: 'Programming' },
   { label: 'FastAPI', category: 'Backend' },
-  { label: 'Firebase', category: 'Backend' },
   { label: 'Supabase', category: 'Backend' },
-  { label: 'MongoDB', category: 'Backend' },
   { label: 'AWS', category: 'Cloud' },
   { label: 'Docker', category: 'Cloud' },
   { label: 'React', category: 'Frontend' },
-  { label: 'Vite', category: 'Frontend' },
+  { label: 'TypeScript', category: 'Frontend' },
   { label: 'Tailwind CSS', category: 'Frontend' },
-  { label: 'Streamlit', category: 'Frontend' },
-  { label: 'SHAP', category: 'Tools' },
-  { label: 'OpenCV', category: 'Tools' },
-  { label: 'YOLOv8', category: 'Tools' },
-  { label: 'Git', category: 'Tools' },
   { label: 'Vercel', category: 'Tools' },
 ];
 
@@ -85,28 +75,28 @@ export function MemoryBanks() {
   };
 
   return (
-    <section className="py-20 px-6 relative overflow-hidden">
+    <section className="min-h-screen py-20 px-6 w-full max-w-6xl mx-auto flex flex-col justify-center relative overflow-hidden">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-900/50 via-slate-950 to-slate-900/50" />
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-900/50 via-slate-950 to-slate-900/50 -z-10" />
 
       {/* Animated background elements */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-magenta-500/5 rounded-full blur-3xl" />
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl -z-10" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-magenta-500/5 rounded-full blur-3xl -z-10" />
 
-      <div className="relative z-10 max-w-6xl mx-auto">
+      <div className="relative z-10 w-full">
         {/* Section title */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-cyan-300 mb-4">MEMORY BANKS</h2>
-          <p className="text-slate-400 font-mono text-sm">Core competencies and operational history</p>
+          <h2 className="text-4xl md:text-5xl font-bold text-cyan-300 mb-2">MEMORY BANKS</h2>
+          <p className="text-slate-400 font-mono text-xs">Core competencies and operational history</p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-16">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12">
           {/* Skills section */}
           <motion.div
             variants={containerVariants}

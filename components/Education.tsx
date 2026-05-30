@@ -37,24 +37,24 @@ const itemVariants = {
 
 export function Education() {
   return (
-    <section className="py-20 px-6 relative overflow-hidden">
+    <section className="min-h-screen py-20 px-6 w-full max-w-4xl mx-auto flex flex-col justify-center relative overflow-hidden">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-900/50 via-slate-950 to-slate-900/50" />
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-900/50 via-slate-950 to-slate-900/50 -z-10" />
 
       {/* Animated background elements */}
-      <div className="absolute top-1/2 -left-40 w-80 h-80 bg-cyan-500/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 -right-40 w-80 h-80 bg-magenta-500/5 rounded-full blur-3xl" />
+      <div className="absolute top-1/2 -left-40 w-80 h-80 bg-cyan-500/5 rounded-full blur-3xl -z-10" />
+      <div className="absolute bottom-0 -right-40 w-80 h-80 bg-magenta-500/5 rounded-full blur-3xl -z-10" />
 
-      <div className="relative z-10 max-w-4xl mx-auto">
+      <div className="relative z-10 w-full">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-cyan-300 mb-4">EDUCATION</h2>
-          <p className="text-slate-400 font-mono text-sm">Academic foundation and learning journey</p>
+          <h2 className="text-4xl md:text-5xl font-bold text-cyan-300 mb-2">EDUCATION</h2>
+          <p className="text-slate-400 font-mono text-xs">Academic foundation and learning journey</p>
         </motion.div>
 
         <motion.div

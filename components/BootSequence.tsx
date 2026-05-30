@@ -6,7 +6,7 @@ import { Globe } from './Globe';
 
 export function BootSequence() {
   const [displayText, setDisplayText] = useState('');
-  const fullText = '> SENTIENT_OS_v1.0 INITIALIZED';
+  const fullText = '> CORE_SYSTEM_v1.0 INITIALIZED';
   const [isComplete, setIsComplete] = useState(false);
 
   useEffect(() => {
@@ -29,7 +29,7 @@ export function BootSequence() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
-      className="min-h-screen flex items-center justify-center relative overflow-hidden"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden w-full"
     >
       {/* Background grid effect */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(34,211,238,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(34,211,238,0.03)_1px,transparent_1px)] bg-[size:50px_50px] opacity-20" />

@@ -7,8 +7,8 @@ const kanit = Kanit({ subsets: ["latin"], weight: ["300", "400", "500", "600", "
 const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], weight: ["400", "600"] });
 
 export const metadata: Metadata = {
-  title: 'Sentient OS | Full-Stack Developer',
-  description: 'A cyber-minimalist portfolio of advanced digital consciousness',
+  title: 'Pratik Jadhav | AI Engineer & Full-Stack Developer',
+  description: 'Portfolio of Pratik Jadhav - AI engineer specializing in Generative AI, RAG, and scalable backend systems.',
   generator: 'v0.app',
   icons: {
     icon: [

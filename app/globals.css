@@ -180,4 +180,51 @@
   ::-webkit-scrollbar-thumb:hover {
     background: rgba(34, 211, 238, 0.6);
   }
+
+  /* Scroll Snap rules */
+  .scroll-container {
+    height: 100vh;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+  }
+  
+  .scroll-slide {
+    height: 100vh;
+    width: 100%;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  /* 3D text gradient (Cyan-to-Violet-to-Orange) */
+  .gradient-text-3d {
+    background: linear-gradient(135deg, #00f0ff 0%, #b537f2 50%, #ff7b00 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Glow capsule button style */
+  .btn-glow-violet {
+    background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+    border-radius: 9999px;
+    box-shadow: 0 0 25px rgba(34, 211, 238, 0.45);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .btn-glow-violet:hover {
+    box-shadow: 0 0 35px rgba(34, 211, 238, 0.7);
+    transform: translateY(-2px);
+  }
+  
+  .btn-glow-violet:active {
+    transform: translateY(0);
+  }
 }
