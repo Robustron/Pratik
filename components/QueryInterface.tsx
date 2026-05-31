@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useState, useRef } from 'react';
+import { VideoBackground } from './VideoBackground';
 
 export function QueryInterface() {
   const [messages, setMessages] = useState<string[]>([
@@ -11,11 +12,12 @@ export function QueryInterface() {
   const inputRef = useRef<HTMLInputElement>(null);
 
   const containerVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, scale: 0.8, y: 50 },
     visible: {
       opacity: 1,
+      scale: 1,
       y: 0,
-      transition: { duration: 0.6 },
+      transition: { duration: 0.8, type: 'spring', bounce: 0.4 },
     },
   };
 
@@ -75,11 +77,14 @@ export function QueryInterface() {
   };
 
   return (
-    <section className="min-h-screen py-20 px-6 w-full max-w-6xl mx-auto flex flex-col justify-between relative overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 -z-10" />
-
-      <div className="absolute top-1/4 right-0 w-96 h-96 bg-magenta-500/5 rounded-full blur-3xl -z-10" />
+    <motion.section
+      initial={{ opacity: 0, y: -200 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: false, amount: 0.2 }}
+      className="min-h-screen py-20 px-6 w-full max-w-6xl mx-auto flex flex-col justify-between relative overflow-hidden"
+    >
+      <VideoBackground url="https://stream.mux.com/Aa02T7oM1wH5Mk5EEVDYhbZ1ChcdhRsS2m1NYyx4Ua1g.m3u8" />
 
       <div className="relative z-10 max-w-2xl mx-auto w-full flex-1 flex flex-col justify-center my-12">
         {/* Section title */}
@@ -164,6 +169,6 @@ export function QueryInterface() {
       <footer className="w-full border-t border-slate-800/40 pt-8 pb-4 z-10 text-center text-slate-500 font-mono text-xs">
         <p>&copy; 2026 Pratik Jadhav. All rights reserved.</p>
       </footer>
-    </section>
+    </motion.section>
   );
 }

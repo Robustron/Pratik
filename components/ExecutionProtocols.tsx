@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { ExternalLink, Github, Lock } from 'lucide-react';
+import { VideoBackground } from './VideoBackground';
 
 const projects = [
   {
@@ -96,164 +97,169 @@ function ProjectCard({
   index: number;
   totalCards: number;
 }) {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ['start end', 'end start'],
-  });
-
-  const targetScale = 1 - (totalCards - 1 - index) * 0.025;
-  const scale = useTransform(scrollYProgress, [0, 1], [1, targetScale]);
   const num = String(index + 1).padStart(2, '0');
 
   return (
-    <div ref={containerRef} className="h-[80vh] sm:h-[85vh] sticky top-[100px] mb-[10vh] origin-top">
-      <motion.div
-        style={{
-          scale,
-        }}
-        className="w-full h-full"
-      >
-        <div className={`relative w-full h-full rounded-[32px] border-2 ${project.accent} bg-slate-950/95 backdrop-blur-md p-6 sm:p-8 md:p-10 flex flex-col lg:flex-row items-stretch justify-between gap-6 md:gap-8 shadow-2xl overflow-hidden`}>
-          {/* Background gradient details */}
-          <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-20 pointer-events-none`} />
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(34,211,238,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(34,211,238,0.01)_1px,transparent_1px)] bg-[size:30px_30px] pointer-events-none" />
+    <div className="w-full h-full max-w-6xl mx-auto">
+      <div className={`relative w-full h-full rounded-[32px] border border-white/10 ${project.accent} bg-white/[0.03] backdrop-blur-[30px] p-6 sm:p-8 md:p-10 flex flex-col lg:flex-row items-stretch justify-between gap-4 md:gap-8 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] overflow-hidden ring-1 ring-white/10`}>
+        {/* Background gradient details */}
+        <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-20 pointer-events-none`} />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(34,211,238,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(34,211,238,0.01)_1px,transparent_1px)] bg-[size:30px_30px] pointer-events-none" />
 
-          {/* Left Column - Details */}
-          <div className="flex-1 flex flex-col justify-between z-10">
-            <div>
-              {/* Header info */}
-              <div className="flex items-center gap-4 mb-4">
-                <span className="text-4xl md:text-5xl font-black font-mono tracking-tight text-slate-500/40 select-none">
-                  {num}
-                </span>
-                <span className="text-xs font-mono uppercase tracking-widest text-cyan-400/80 bg-cyan-500/5 border border-cyan-500/20 px-3 py-1 rounded-full">
-                  {project.category}
-                </span>
+        {/* Left Column - Details */}
+        <div className="flex-1 flex flex-col justify-between z-10">
+          <div>
+            {/* Header info */}
+            <div className="flex items-center gap-4 mb-3">
+              <span className="text-3xl md:text-4xl font-black font-mono tracking-tight text-slate-500/40 select-none">
+                {num}
+              </span>
+              <span className="text-[10px] font-mono uppercase tracking-widest text-cyan-400/80 bg-cyan-500/5 border border-cyan-500/20 px-2 py-1 rounded-full">
+                {project.category}
+              </span>
+            </div>
+
+            {/* Title */}
+            <h3 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight mb-3 gradient-text-3d leading-tight">
+              {project.title}
+            </h3>
+
+            {/* Description */}
+            <p className="text-slate-300 font-light text-[13px] md:text-sm leading-relaxed mb-4">
+              {project.description}
+            </p>
+
+            {/* Restricted payload notice */}
+            {project.restricted && (
+              <div className="mb-4 px-3 py-2 rounded-xl border border-amber-500/20 bg-amber-500/5 flex items-start gap-2">
+                <Lock className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
+                <p className="text-amber-300/80 text-[11px] font-mono leading-relaxed">
+                  NDA Protected: Source code and yield model blueprints are restricted.
+                </p>
               </div>
+            )}
+          </div>
 
-              {/* Title */}
-              <h3 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight mb-4 gradient-text-3d leading-tight">
-                {project.title}
-              </h3>
+          <div>
+            {/* Tech Tags */}
+            <div className="flex flex-wrap gap-1.5 mb-5">
+              {project.tech.map((t) => (
+                <span
+                  key={t}
+                  className="px-2 py-1 text-[10px] font-mono bg-slate-900/60 border border-slate-800 text-slate-400 rounded-md"
+                >
+                  {t}
+                </span>
+              ))}
+            </div>
 
-              {/* Description */}
-              <p className="text-slate-300 font-light text-sm md:text-base leading-relaxed mb-6">
-                {project.description}
-              </p>
-
-              {/* Restricted payload notice */}
-              {project.restricted && (
-                <div className="mb-6 px-4 py-3 rounded-xl border border-amber-500/20 bg-amber-500/5 flex items-start gap-3">
-                  <Lock className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
-                  <p className="text-amber-300/80 text-xs font-mono leading-relaxed">
-                    NDA Protected: Source code and yield model blueprints are restricted. Review access available upon request.
-                  </p>
-                </div>
+            {/* Action buttons */}
+            <div className="flex flex-wrap gap-3 items-center">
+              {project.restricted ? (
+                <span className="px-4 py-2 rounded-full border border-amber-500/30 bg-amber-500/5 text-amber-400 text-[11px] font-semibold tracking-wider uppercase font-mono flex items-center gap-2">
+                  <Lock className="w-3.5 h-3.5" />
+                  NDA Protected
+                </span>
+              ) : (
+                <>
+                  {project.liveLink && (
+                    <a
+                      href={project.liveLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-glow-violet px-4 py-2 flex items-center justify-center gap-2 text-white text-[11px] font-semibold tracking-wider uppercase font-mono select-none"
+                    >
+                      <ExternalLink className="w-3.5 h-3.5" />
+                      Live Project
+                    </a>
+                  )}
+                  {project.githubLink && (
+                    <a
+                      href={project.githubLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-4 py-2 rounded-full border border-slate-700 bg-slate-950 text-slate-300 text-[11px] font-semibold tracking-wider uppercase font-mono hover:bg-slate-900 transition-colors flex items-center justify-center gap-2 select-none"
+                    >
+                      <Github className="w-3.5 h-3.5" />
+                      Source
+                    </a>
+                  )}
+                </>
               )}
             </div>
-
-            <div>
-              {/* Tech Tags */}
-              <div className="flex flex-wrap gap-2 mb-6">
-                {project.tech.map((t) => (
-                  <span
-                    key={t}
-                    className="px-3 py-1 text-xs font-mono bg-slate-900/60 border border-slate-800 text-slate-400 rounded-md"
-                  >
-                    {t}
-                  </span>
-                ))}
-              </div>
-
-              {/* Action buttons */}
-              <div className="flex flex-wrap gap-4 items-center">
-                {project.restricted ? (
-                  <span className="px-6 py-2.5 rounded-full border border-amber-500/30 bg-amber-500/5 text-amber-400 text-xs font-semibold tracking-wider uppercase font-mono flex items-center gap-2">
-                    <Lock className="w-3.5 h-3.5" />
-                    NDA Protected
-                  </span>
-                ) : (
-                  <>
-                    {project.liveLink && (
-                      <a
-                        href={project.liveLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn-glow-violet px-6 py-2.5 flex items-center justify-center gap-2 text-white text-xs font-semibold tracking-wider uppercase font-mono select-none"
-                      >
-                        <ExternalLink className="w-3.5 h-3.5" />
-                        Live Project
-                      </a>
-                    )}
-                    {project.githubLink && (
-                      <a
-                        href={project.githubLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="px-6 py-2.5 rounded-full border border-slate-700 bg-slate-950 text-slate-300 text-xs font-semibold tracking-wider uppercase font-mono hover:bg-slate-900 transition-colors flex items-center justify-center gap-2 select-none"
-                      >
-                        <Github className="w-3.5 h-3.5" />
-                        Source
-                      </a>
-                    )}
-                  </>
-                )}
-              </div>
-            </div>
-          </div>
-
-          {/* Right Column - Classy Thematic Photo */}
-          <div className="flex-1 min-h-[220px] md:min-h-[300px] lg:min-h-0 flex items-center justify-center relative overflow-hidden rounded-[20px] border border-slate-800/80 shadow-2xl z-10">
-            <img
-              src={project.mockup}
-              alt={project.title}
-              className="absolute inset-0 w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700 select-none"
-            />
           </div>
         </div>
-      </motion.div>
+
+        {/* Right Column - Classy Thematic Photo */}
+        <div className="flex-1 min-h-[180px] md:min-h-[250px] lg:min-h-0 flex items-center justify-center relative overflow-hidden rounded-[20px] border border-slate-800/80 shadow-2xl z-10">
+          <img
+            src={project.mockup}
+            alt={project.title}
+            className="absolute inset-0 w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700 select-none"
+          />
+        </div>
+      </div>
     </div>
   );
 }
 
 export function ExecutionProtocols() {
-  return (
-    <section id="projects" className="py-20 px-4 sm:px-6 relative overflow-hidden">
-      {/* Background decoration elements */}
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 -z-10" />
-      <div className="absolute -left-40 top-20 w-80 h-80 bg-cyan-500/5 rounded-full blur-3xl -z-10" />
-      <div className="absolute -right-40 bottom-20 w-80 h-80 bg-purple-500/5 rounded-full blur-3xl -z-10" />
+  const vid1 = "https://stream.mux.com/01yW6GoUz01OTXk5w1Rt1MHkJWlCGIwj46SUONJZ4DJUE.m3u8";
+  const vid2 = "https://stream.mux.com/Aa02T7oM1wH5Mk5EEVDYhbZ1ChcdhRsS2m1NYyx4Ua1g.m3u8";
 
-      <div className="relative z-10 max-w-6xl mx-auto">
+  return (
+    <>
+      {/* Slide 1: Title + First Project */}
+      <div id="projects" className="snap-start snap-always h-[100dvh] w-full flex flex-col items-center justify-center pt-8 pb-4 px-4 sm:px-6 relative z-10 overflow-hidden">
+        <VideoBackground url={vid1} />
+
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16 sm:mb-20"
+          className="text-center mb-6"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-cyan-300 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-cyan-300 mb-2">
             EXECUTION PROTOCOLS
           </h2>
-          <p className="text-slate-400 font-mono text-sm">
+          <p className="text-slate-400 font-mono text-[11px]">
             Deployed systems and operational achievements
           </p>
         </motion.div>
 
-        {/* Sticky card stack */}
-        <div className="relative flex flex-col items-center">
-          {projects.map((project, i) => (
-            <ProjectCard
-              key={project.title}
-              project={project}
-              index={i}
-              totalCards={projects.length}
-            />
-          ))}
-        </div>
+        {/* First Project Card */}
+        <motion.div
+          initial={{ opacity: 0, x: -200 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: false, amount: 0.3 }}
+          className="w-full h-[70vh]"
+        >
+          <ProjectCard project={projects[0]} index={0} totalCards={projects.length} />
+        </motion.div>
       </div>
-    </section>
+
+      {/* Remaining Projects: Centered Slides */}
+      {projects.slice(1).map((project, i) => {
+        const videoUrl = (i + 1) % 2 === 0 ? vid1 : vid2;
+        return (
+          <div key={project.title} className="snap-start snap-always h-[100dvh] w-full flex items-center justify-center px-4 sm:px-6 relative z-10 overflow-hidden">
+            <VideoBackground url={videoUrl} />
+
+            <motion.div
+              initial={{ opacity: 0, x: ((i + 1) % 2 === 0) ? -200 : 200 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              viewport={{ once: false, amount: 0.3 }}
+              className="w-full h-[75vh]"
+            >
+              <ProjectCard project={project} index={i + 1} totalCards={projects.length} />
+            </motion.div>
+          </div>
+        );
+      })}
+    </>
   );
 }

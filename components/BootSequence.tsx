@@ -67,17 +67,12 @@ export function BootSequence() {
 
             {/* Boot log lines that appear after main text */}
             {isComplete && (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5 }}
-                className="space-y-2 text-cyan-400/70 text-sm font-mono"
-              >
-                <p>[✓] Memory cores activated</p>
-                <p>[✓] Neural pathways synchronized</p>
-                <p>[✓] Consciousness protocols loaded</p>
-                <p className="text-cyan-300 glow-cyan">[✓] Ready for interaction</p>
-              </motion.div>
+              <div className="space-y-2 text-cyan-400/70 text-sm font-mono">
+                <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}>[✓] Memory cores activated</motion.p>
+                <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }}>[✓] Neural pathways synchronized</motion.p>
+                <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.0 }}>[✓] Consciousness protocols loaded</motion.p>
+                <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.4 }} className="text-cyan-300 glow-cyan">[✓] Ready for interaction</motion.p>
+              </div>
             )}
           </div>
 

@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { VideoBackground } from './VideoBackground';
 
 const educationData = [
   {
@@ -37,13 +38,14 @@ const itemVariants = {
 
 export function Education() {
   return (
-    <section className="min-h-screen py-20 px-6 w-full max-w-4xl mx-auto flex flex-col justify-center relative overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-900/50 via-slate-950 to-slate-900/50 -z-10" />
-
-      {/* Animated background elements */}
-      <div className="absolute top-1/2 -left-40 w-80 h-80 bg-cyan-500/5 rounded-full blur-3xl -z-10" />
-      <div className="absolute bottom-0 -right-40 w-80 h-80 bg-magenta-500/5 rounded-full blur-3xl -z-10" />
+    <motion.section
+      initial={{ opacity: 0, y: -200 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: false, amount: 0.2 }}
+      className="min-h-screen py-20 px-6 w-full max-w-6xl mx-auto flex flex-col justify-center relative overflow-hidden"
+    >
+      <VideoBackground url="https://stream.mux.com/Aa02T7oM1wH5Mk5EEVDYhbZ1ChcdhRsS2m1NYyx4Ua1g.m3u8" />
 
       <div className="relative z-10 w-full">
         <motion.div
@@ -122,6 +124,6 @@ export function Education() {
           ))}
         </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }

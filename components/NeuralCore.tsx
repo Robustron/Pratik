@@ -35,7 +35,13 @@ export function NeuralCore() {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden w-full">
+    <motion.section
+      initial={{ opacity: 0, y: -200 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: false, amount: 0.2 }}
+      className="min-h-screen flex items-center justify-center relative overflow-hidden w-full"
+    >
       {/* Animated background elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950" />
 
@@ -170,6 +176,6 @@ export function NeuralCore() {
         </div>
 
       </div>
-    </section>
+    </motion.section>
   );
 }

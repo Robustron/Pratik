@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { VideoBackground } from './VideoBackground';
 
 const certifications = [
   { title: 'AWS Certified Developer – Associate', issuer: 'Amazon Web Services' },
@@ -49,15 +50,16 @@ const hoverVariants = {
 
 export function Credentials() {
   return (
-    <section className="min-h-screen py-20 px-6 w-full max-w-6xl mx-auto flex flex-col justify-center relative overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 -z-10" />
+    <motion.section
+      initial={{ opacity: 0, y: -200 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: false, amount: 0.2 }}
+      className="min-h-screen py-10 px-6 w-full max-w-6xl mx-auto flex flex-col justify-center relative overflow-hidden"
+    >
+      <VideoBackground url="https://stream.mux.com/Aa02T7oM1wH5Mk5EEVDYhbZ1ChcdhRsS2m1NYyx4Ua1g.m3u8" />
 
-      {/* Animated background elements */}
-      <div className="absolute top-0 right-1/3 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl -z-10" />
-      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-magenta-500/5 rounded-full blur-3xl -z-10" />
-
-      <div className="relative z-10 w-full">
+      <div className="relative z-10 w-full mt-8">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -119,6 +121,6 @@ export function Credentials() {
           </motion.div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

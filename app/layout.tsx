@@ -36,7 +36,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="bg-slate-950 scroll-smooth">
-      <body className="font-sans antialiased bg-slate-950 text-slate-100 overflow-x-hidden" style={{
+      <body className="font-sans antialiased bg-slate-950 text-slate-100 overflow-hidden" style={{
         fontFamily: `${kanit.style.fontFamily}, ${jetbrainsMono.style.fontFamily}`,
       }}>
         {children}
