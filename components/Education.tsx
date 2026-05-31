@@ -38,13 +38,7 @@ const itemVariants = {
 
 export function Education() {
   return (
-    <motion.section
-      initial={{ opacity: 0, y: -200 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      viewport={{ once: false, amount: 0.2 }}
-      className="min-h-screen py-20 px-6 w-full max-w-6xl mx-auto flex flex-col justify-center relative overflow-hidden"
-    >
+    <section className="min-h-screen py-20 px-6 w-full max-w-6xl mx-auto flex flex-col justify-center relative overflow-hidden">
       <VideoBackground url="https://stream.mux.com/Aa02T7oM1wH5Mk5EEVDYhbZ1ChcdhRsS2m1NYyx4Ua1g.m3u8" />
 
       <div className="relative z-10 w-full">
@@ -124,6 +118,6 @@ export function Education() {
           ))}
         </motion.div>
       </div>
-    </motion.section>
+    </section>
   );
 }

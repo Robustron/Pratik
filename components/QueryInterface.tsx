@@ -77,13 +77,7 @@ export function QueryInterface() {
   };
 
   return (
-    <motion.section
-      initial={{ opacity: 0, y: -200 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      viewport={{ once: false, amount: 0.2 }}
-      className="min-h-screen py-20 px-6 w-full max-w-6xl mx-auto flex flex-col justify-between relative overflow-hidden"
-    >
+    <section className="min-h-screen py-20 px-6 w-full max-w-6xl mx-auto flex flex-col justify-between relative overflow-hidden">
       <VideoBackground url="https://stream.mux.com/Aa02T7oM1wH5Mk5EEVDYhbZ1ChcdhRsS2m1NYyx4Ua1g.m3u8" />
 
       <div className="relative z-10 max-w-2xl mx-auto w-full flex-1 flex flex-col justify-center my-12">
@@ -169,6 +163,6 @@ export function QueryInterface() {
       <footer className="w-full border-t border-slate-800/40 pt-8 pb-4 z-10 text-center text-slate-500 font-mono text-xs">
         <p>&copy; 2026 Pratik Jadhav. All rights reserved.</p>
       </footer>
-    </motion.section>
+    </section>
   );
 }

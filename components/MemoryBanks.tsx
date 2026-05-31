@@ -75,13 +75,7 @@ export function MemoryBanks() {
   };
 
   return (
-    <motion.section
-      initial={{ opacity: 0, y: -200 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      viewport={{ once: false, amount: 0.2 }}
-      className="min-h-screen py-20 px-6 w-full max-w-6xl mx-auto flex flex-col justify-center relative overflow-hidden"
-    >
+    <section className="min-h-screen py-20 px-6 w-full max-w-6xl mx-auto flex flex-col justify-center relative overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-slate-900/50 via-slate-950 to-slate-900/50 -z-10" />
 
@@ -163,6 +157,6 @@ export function MemoryBanks() {
           </motion.div>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 }
