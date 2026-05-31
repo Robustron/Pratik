@@ -101,7 +101,7 @@ function ProjectCard({
 
   return (
     <div className="w-full h-full max-w-6xl mx-auto">
-      <div className={`relative w-full h-full rounded-[32px] border border-white/10 ${project.accent} bg-slate-950/85 backdrop-blur-xl p-6 sm:p-8 md:p-10 flex flex-col lg:flex-row items-stretch justify-between gap-4 md:gap-8 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] overflow-hidden ring-1 ring-white/10`}>
+      <div className={`relative w-full h-full rounded-[32px] border border-white/10 ${project.accent} bg-slate-950/40 backdrop-blur-md p-6 sm:p-8 md:p-10 flex flex-col lg:flex-row items-stretch justify-between gap-4 md:gap-8 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] overflow-hidden ring-1 ring-white/10`}>
         {/* Background gradient details */}
         <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-20 pointer-events-none`} />
         <div className="absolute inset-0 bg-[linear-gradient(rgba(34,211,238,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(34,211,238,0.01)_1px,transparent_1px)] bg-[size:30px_30px] pointer-events-none" />
