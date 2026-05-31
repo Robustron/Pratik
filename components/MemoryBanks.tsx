@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { Typewriter } from './Typewriter';
 
 const skills = [
   { label: 'LangChain', category: 'AI/ML' },
@@ -105,7 +106,9 @@ export function MemoryBanks() {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <h3 className="text-2xl font-bold text-magenta-400 mb-8">SKILLS</h3>
+            <h3 className="text-2xl font-bold text-magenta-400 mb-8">
+              <Typewriter text="SKILLS" speed={30} delay={300} />
+            </h3>
 
             <motion.div
               className="grid grid-cols-2 lg:grid-cols-3 gap-3"
@@ -122,8 +125,12 @@ export function MemoryBanks() {
                   variants={hoverVariants}
                   className="p-4 border border-cyan-500/30 rounded-lg backdrop-blur-sm cursor-pointer transition-all"
                 >
-                  <p className="text-cyan-300 font-mono text-xs font-semibold">{skill.label}</p>
-                  <p className="text-slate-500 text-xs mt-1">{skill.category}</p>
+                  <p className="text-cyan-300 font-mono text-xs font-semibold">
+                    <Typewriter text={skill.label} speed={20} delay={600 + i * 50} />
+                  </p>
+                  <p className="text-slate-500 text-xs mt-1">
+                    <Typewriter text={skill.category} speed={20} delay={800 + i * 50} />
+                  </p>
                 </motion.div>
               ))}
             </motion.div>
@@ -137,7 +144,9 @@ export function MemoryBanks() {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <h3 className="text-2xl font-bold text-magenta-400 mb-8">EXPERIENCE</h3>
+            <h3 className="text-2xl font-bold text-magenta-400 mb-8">
+              <Typewriter text="EXPERIENCE" speed={30} delay={400} />
+            </h3>
 
             <motion.div className="space-y-4" variants={containerVariants}>
               {experience.map((exp, i) => (
@@ -147,10 +156,18 @@ export function MemoryBanks() {
                   whileHover={{ x: 10 }}
                   className="p-6 border-l-2 border-cyan-400 pl-6 hover:bg-cyan-400/5 transition-colors"
                 >
-                  <p className="text-cyan-300 font-mono font-semibold">{exp.role}</p>
-                  <p className="text-slate-400 text-sm mt-1">{exp.company}</p>
-                  <p className="text-slate-500 text-xs mt-1 font-mono">{exp.period}</p>
-                  <p className="text-slate-400 text-sm mt-3">{exp.description}</p>
+                  <p className="text-cyan-300 font-mono font-semibold">
+                    <Typewriter text={exp.role} speed={20} delay={800 + i * 200} />
+                  </p>
+                  <p className="text-slate-400 text-sm mt-1">
+                    <Typewriter text={exp.company} speed={20} delay={1000 + i * 200} />
+                  </p>
+                  <p className="text-slate-500 text-xs mt-1 font-mono">
+                    <Typewriter text={exp.period} speed={20} delay={1200 + i * 200} />
+                  </p>
+                  <p className="text-slate-400 text-sm mt-3 min-h-[40px]">
+                    <Typewriter text={exp.description} speed={15} delay={1400 + i * 200} />
+                  </p>
                 </motion.div>
               ))}
             </motion.div>

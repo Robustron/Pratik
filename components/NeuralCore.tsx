@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { Typewriter } from './Typewriter';
 
 export function NeuralCore() {
   const ringVariants = {
@@ -61,16 +62,22 @@ export function NeuralCore() {
             JADHAV
           </motion.h1>
 
-          <p className="text-cyan-400 font-mono text-sm md:text-base mb-6">AI Engineer | Full-Stack Developer</p>
+          <p className="text-cyan-400 font-mono text-sm md:text-base mb-6">
+            <Typewriter text="AI Engineer | Full-Stack Developer" delay={800} />
+          </p>
 
-          <motion.p
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.8 }}
-            className="text-sm md:text-base text-slate-300 mb-8 font-light leading-relaxed max-w-lg"
+            className="text-sm md:text-base text-slate-300 mb-8 font-light leading-relaxed max-w-lg min-h-[100px]"
           >
-            AI engineer specializing in Generative AI, Retrieval-Augmented Generation (RAG), and scalable backend systems. Expert in LLM-powered products, cloud infrastructure, and deploying production-ready AI solutions that solve real-world problems.
-          </motion.p>
+            <Typewriter 
+              text="AI engineer specializing in Generative AI, Retrieval-Augmented Generation (RAG), and scalable backend systems. Expert in LLM-powered products, cloud infrastructure, and deploying production-ready AI solutions that solve real-world problems." 
+              delay={1200} 
+              speed={15} 
+            />
+          </motion.div>
 
           {/* Contact info */}
           <motion.div
