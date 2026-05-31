@@ -101,7 +101,7 @@ function ProjectCard({
 
   return (
     <div className="w-full h-full max-w-6xl mx-auto">
-      <div className={`relative w-full h-full rounded-[32px] border border-white/10 ${project.accent} bg-white/[0.05] backdrop-blur-[20px] p-6 sm:p-8 md:p-10 flex flex-col lg:flex-row items-stretch justify-between gap-4 md:gap-8 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] overflow-hidden ring-1 ring-white/10`}>
+      <div className={`relative w-full h-full rounded-[32px] border-t border-l border-white/30 border-b border-r border-white/5 ${project.accent} bg-transparent backdrop-blur-lg p-6 sm:p-8 md:p-10 flex flex-col lg:flex-row items-stretch justify-between gap-4 md:gap-8 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] overflow-hidden`}>
         {/* Background gradient details */}
         <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-20 pointer-events-none`} />
         <div className="absolute inset-0 bg-[linear-gradient(rgba(34,211,238,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(34,211,238,0.01)_1px,transparent_1px)] bg-[size:30px_30px] pointer-events-none" />
@@ -167,7 +167,7 @@ function ProjectCard({
                       href={project.liveLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="btn-glow-violet px-4 py-2 flex items-center justify-center gap-2 text-white text-[11px] font-semibold tracking-wider uppercase font-mono select-none"
+                      className="rounded-full px-4 py-2 flex items-center justify-center gap-2 text-white text-[11px] font-semibold tracking-wider uppercase font-mono select-none bg-gradient-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 hover:shadow-[0_0_20px_rgba(167,139,250,0.8)] shadow-[0_0_15px_rgba(139,92,246,0.5)] transition-all duration-300"
                     >
                       <ExternalLink className="w-3.5 h-3.5" />
                       Live Project
