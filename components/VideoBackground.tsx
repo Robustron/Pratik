@@ -1,5 +1,7 @@
 'use client';
-import MuxPlayer from '@mux/mux-player-react';
+import dynamic from 'next/dynamic';
+
+const MuxPlayer = dynamic(() => import('@mux/mux-player-react'), { ssr: false });
 
 export function VideoBackground({ url, opacity = 0.6 }: { url: string; opacity?: number }) {
   // Extract the playback ID from the Mux URL
