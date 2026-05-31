@@ -8,7 +8,7 @@ const educationData = [
     degree: 'B.Tech in Computer Engineering',
     institution: 'University of Mumbai',
     period: '2022 – 2026',
-    status: 'Currently Pursuing',
+    status: 'Completed',
     highlights: [
       'Focus on AI, ML, and Full-Stack Development',
       'Strong foundation in data structures and algorithms',
