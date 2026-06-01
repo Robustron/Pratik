@@ -158,7 +158,7 @@ export function NeuralCore() {
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(34,211,238,0.1)_0,transparent_70%)]" />
               {/* Replace the src below with your actual photo path (e.g., '/profile.jpg') */}
               <img 
-                src="/pratik.png" 
+                src="/Pratik.png" 
                 alt="Pratik Jadhav" 
                 className="w-full h-full object-cover opacity-80 mix-blend-luminosity hover:mix-blend-normal hover:opacity-100 transition-all duration-500"
                 onError={(e) => {
