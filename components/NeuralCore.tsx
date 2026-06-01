@@ -160,7 +160,7 @@ export function NeuralCore() {
               <img 
                 src="/Pratik.png" 
                 alt="Pratik Jadhav" 
-                className="w-full h-full object-cover opacity-80 mix-blend-luminosity hover:mix-blend-normal hover:opacity-100 transition-all duration-500"
+                className="w-full h-full object-cover object-top grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
                 onError={(e) => {
                   // Fallback if image doesn't exist yet
                   e.currentTarget.style.display = 'none';
