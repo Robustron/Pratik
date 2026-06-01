@@ -17,7 +17,7 @@ const projects = [
     accentText: 'text-purple-300',
     liveLink: 'https://archon-7.vercel.app/',
     githubLink: 'https://github.com/Robustron/ARCHON-7',
-    mockup: '/archon_classy.png',
+    mockup: '/archon_textbooks.png',
   },
   {
     title: 'ConnectHub',
