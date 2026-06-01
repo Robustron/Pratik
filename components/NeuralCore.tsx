@@ -62,7 +62,7 @@ export function NeuralCore() {
           </motion.h1>
 
           <p className="text-cyan-400 font-mono text-sm md:text-base mb-6">
-            Co-Founder & Tech Lead | AI / Full-Stack Engineer | Product Builder
+            AI Engineer | Full-Stack Developer
           </p>
 
           <motion.p
@@ -71,7 +71,7 @@ export function NeuralCore() {
             transition={{ delay: 0.6, duration: 0.8 }}
             className="text-sm md:text-base text-slate-300 mb-8 font-light leading-relaxed max-w-lg"
           >
-            Co-Founder and Tech Lead with a dual profile spanning AI engineering and startup execution. Experienced in architecting and shipping production-grade, full-stack AI systems — from multimodal LLM-powered platforms to blockchain-ready marketplaces — while simultaneously leading on strategy, user research, and go-to-market.
+            AI engineer specializing in Generative AI, Retrieval-Augmented Generation (RAG), and scalable backend systems. Expert in LLM-powered products, cloud infrastructure, and deploying production-ready AI solutions that solve real-world problems.
           </motion.p>
 
           {/* Contact info */}
