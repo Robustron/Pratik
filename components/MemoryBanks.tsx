@@ -24,6 +24,12 @@ const skills = [
 
 const experience = [
   {
+    role: 'Co-Founder & Tech Lead',
+    company: 'UniAgriq',
+    period: '2025 - Present',
+    description: '• Co-founded and led the development of UniAgriq’s AI-driven agriculture and marketplace platforms, overseeing product strategy, roadmap planning, and execution.\n• Managed cross-functional teams, coordinated development sprints, and transformed farmer insights into scalable technology solutions.\n• Conducted on-ground market research across Maharashtra to validate product-market fit, refine pricing strategies, and identify growth opportunities.',
+  },
+  {
     role: 'AI & Backend Developer Intern',
     company: 'IBM CSRBOX',
     period: 'July 2025 - Aug 2025',
@@ -153,7 +159,7 @@ export function MemoryBanks() {
                   <p className="text-cyan-300 font-mono font-semibold">{exp.role}</p>
                   <p className="text-slate-400 text-sm mt-1">{exp.company}</p>
                   <p className="text-slate-500 text-xs mt-1 font-mono">{exp.period}</p>
-                  <p className="text-slate-400 text-sm mt-3">{exp.description}</p>
+                  <p className="text-slate-400 text-sm mt-3 whitespace-pre-line">{exp.description}</p>
                 </motion.div>
               ))}
             </motion.div>
