@@ -113,12 +113,14 @@ export function NeuralCore() {
 
           {/* Call to action button */}
           <motion.a
-            href="#projects"
+            href="/Pratik_Jadhav_CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="inline-block px-8 py-3 border border-cyan-400 text-cyan-300 font-mono text-sm rounded hover:bg-cyan-400/10 transition-colors"
           >
-            EXPLORE SYSTEMS →
+            DOWNLOAD CV →
           </motion.a>
         </motion.div>
 
