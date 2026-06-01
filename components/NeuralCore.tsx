@@ -62,7 +62,7 @@ export function NeuralCore() {
           </motion.h1>
 
           <p className="text-cyan-400 font-mono text-sm md:text-base mb-6">
-            AI Engineer | Full-Stack Developer
+            AI System Architect | Tech Leader
           </p>
 
           <motion.p
