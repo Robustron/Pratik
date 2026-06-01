@@ -27,7 +27,7 @@ const experience = [
     role: 'Co-Founder & Tech Lead',
     company: 'UniAgriq',
     period: '2025 - Present',
-    description: '• Co-founded and led the development of UniAgriq’s AI-driven agriculture and marketplace platforms, overseeing product strategy, roadmap planning, and execution.\n• Managed cross-functional teams, coordinated development sprints, and transformed farmer insights into scalable technology solutions.\n• Conducted on-ground market research across Maharashtra to validate product-market fit, refine pricing strategies, and identify growth opportunities.',
+    description: 'Co-Founder & Tech Lead at UniAgriq, leading the development of AI-driven agriculture platforms while driving product strategy, farmer-focused market research, and business growth initiatives.',
   },
   {
     role: 'AI & Backend Developer Intern',
