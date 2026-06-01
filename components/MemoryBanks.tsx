@@ -3,28 +3,32 @@
 import { motion } from 'framer-motion';
 
 const skills = [
-  { label: 'LangChain', category: 'AI/ML' },
-  { label: 'Gemini API', category: 'AI/ML' },
+  { label: 'Claude & Gemini API', category: 'AI/ML' },
   { label: 'RAG Systems', category: 'AI/ML' },
-  { label: 'Vector DB (FAISS, Pinecone)', category: 'AI/ML' },
-  { label: 'YOLOv8', category: 'AI/ML' },
-  { label: 'TensorFlow', category: 'AI/ML' },
-  { label: 'FastAPI', category: 'Backend' },
-  { label: 'Supabase', category: 'Backend' },
-  { label: 'AWS', category: 'Cloud' },
-  { label: 'Docker', category: 'Cloud' },
-  { label: 'React', category: 'Frontend' },
-  { label: 'TypeScript', category: 'Frontend' },
-  { label: 'Tailwind CSS', category: 'Frontend' },
-  { label: 'Vercel', category: 'Tools' },
+  { label: 'LangChain & Vector DBs', category: 'AI/ML' },
+  { label: 'Next.js & React', category: 'Engineering' },
+  { label: 'TypeScript', category: 'Engineering' },
+  { label: 'Supabase & PostgreSQL', category: 'Engineering' },
+  { label: 'Docker & AWS', category: 'Engineering' },
+  { label: 'ERC-1155 Architecture', category: 'Web3/Infra' },
+  { label: 'Security & RBAC', category: 'Web3/Infra' },
+  { label: 'Startup Strategy', category: 'Business' },
+  { label: 'UI/UX Design', category: 'Product' },
+  { label: 'Python & Data Analysis', category: 'Data' },
 ];
 
 const experience = [
   {
+    role: 'Co-Founder & Tech Lead',
+    company: 'UniAgriq',
+    period: '2024 - Present',
+    description: 'Founded and led two NDA-protected platforms. Architected multimodal LLM systems, serverless data pipelines, and geospatial mapping while leading product and GTM strategy.',
+  },
+  {
     role: 'AI & Backend Developer Intern',
     company: 'IBM CSRBOX',
     period: 'July 2025 - Aug 2025',
-    description: 'Led team of 8 developers building AI-powered textbook generation platform with RAG architecture using LangChain, Gemini API, and FAISS.',
+    description: 'Led a team of 8 developers building an AI-powered textbook generation platform with RAG architecture using LangChain, Gemini API, and FAISS.',
   },
   {
     role: 'Data Analyst Intern',

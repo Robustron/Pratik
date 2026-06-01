@@ -61,7 +61,9 @@ export function NeuralCore() {
             JADHAV
           </motion.h1>
 
-          <p className="text-cyan-400 font-mono text-sm md:text-base mb-6">AI Engineer | Full-Stack Developer</p>
+          <p className="text-cyan-400 font-mono text-sm md:text-base mb-6">
+            Co-Founder & Tech Lead | AI / Full-Stack Engineer | Product Builder
+          </p>
 
           <motion.p
             initial={{ opacity: 0 }}
@@ -69,7 +71,7 @@ export function NeuralCore() {
             transition={{ delay: 0.6, duration: 0.8 }}
             className="text-sm md:text-base text-slate-300 mb-8 font-light leading-relaxed max-w-lg"
           >
-            AI engineer specializing in Generative AI, Retrieval-Augmented Generation (RAG), and scalable backend systems. Expert in LLM-powered products, cloud infrastructure, and deploying production-ready AI solutions that solve real-world problems.
+            Co-Founder and Tech Lead with a dual profile spanning AI engineering and startup execution. Experienced in architecting and shipping production-grade, full-stack AI systems — from multimodal LLM-powered platforms to blockchain-ready marketplaces — while simultaneously leading on strategy, user research, and go-to-market.
           </motion.p>
 
           {/* Contact info */}
@@ -147,24 +149,27 @@ export function NeuralCore() {
               />
             </motion.div>
 
-            {/* Ring 3 - Cyan inner */}
+            {/* Center core / Photo Space */}
             <motion.div
-              className="absolute w-3/5 h-3/5 rounded-full border border-cyan-400/50"
-              custom={2}
-              variants={ringVariants}
-              animate="animate"
+              className="absolute w-3/5 h-3/5 rounded-full border-2 border-cyan-400/50 flex items-center justify-center overflow-hidden bg-slate-900/80 shadow-[0_0_30px_rgba(34,211,238,0.2)]"
+              animate={{ boxShadow: ['0 0 30px rgba(34,211,238,0.2)', '0 0 50px rgba(34,211,238,0.4)', '0 0 30px rgba(34,211,238,0.2)'] }}
+              transition={{ duration: 4, repeat: Infinity }}
             >
-              <div className="absolute top-0 left-1/2 w-1.5 h-1.5 bg-cyan-300 rounded-full transform -translate-x-1/2" />
-            </motion.div>
-
-            {/* Center core */}
-            <motion.div
-              className="relative w-12 h-12 flex items-center justify-center"
-              animate={{ scale: [1, 1.1, 1] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan-400 to-magenta-500 rounded-full blur-lg opacity-60" />
-              <div className="relative w-8 h-8 bg-gradient-to-br from-cyan-400 to-cyan-300 rounded-full shadow-lg shadow-cyan-400/50" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(34,211,238,0.1)_0,transparent_70%)]" />
+              {/* Replace the src below with your actual photo path (e.g., '/profile.jpg') */}
+              <img 
+                src="/placeholder-photo.png" 
+                alt="Pratik Jadhav" 
+                className="w-full h-full object-cover opacity-80 mix-blend-luminosity hover:mix-blend-normal hover:opacity-100 transition-all duration-500"
+                onError={(e) => {
+                  // Fallback if image doesn't exist yet
+                  e.currentTarget.style.display = 'none';
+                }}
+              />
+              <div className="absolute flex flex-col items-center justify-center text-cyan-400/30 font-mono text-[10px] uppercase tracking-widest -z-10">
+                <span>[Photo]</span>
+                <span>Space</span>
+              </div>
             </motion.div>
           </div>
         </div>
